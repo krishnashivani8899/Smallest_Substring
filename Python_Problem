@@ -1,0 +1,19 @@
+
+def MaxDistinctSubstrings(string) :  
+    max = 0
+    sub_str = set()  
+    for i in range(len(string)) :  
+        j = ""  
+        char = set()  
+        for k in range(i, len(string)) : 
+            j = j + string[k]  
+            char.add(string[k])  
+            if j not in sub_str : 
+                sub_str.add(j)  
+                if max < len(char):
+                    max = len(char) 
+                
+    return max; 
+if __name__ == "__main__" :  
+    string = input()  
+    print(MaxDistinctSubstrings(string));
